@@ -7,11 +7,7 @@ let pergunta = Number(
   )
 );
 
-let x = Number(
-  prompt(
-    "Vamos precisar de dois números para realizarmos os cálculos, digite o primeiro número."
-  )
-);
+let x = Number(prompt("Digite o primeiro número para realizarmos o calculo."));
 let y = Number(
   prompt("Agora digite o segundo número e logo em seguida teremos o resultado.")
 );
