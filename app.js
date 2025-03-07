@@ -1,8 +1,31 @@
+let nome = prompt("Qual é o seu nome?");
 let pergunta = Number(
   prompt(
-    "Vamos calcular ! Escolha um número de 1 a 4:  1 - Adição, 2 - Subtração, 3 - Multiplicação e 4 - Divisão"
+    "Olá " +
+      nome +
+      "! Escolha um número de 1 a 4 para realizarmos operações, sendo 1 - Adição, 2 - Subtração, 3 - Multiplicação e 4 - Divisão"
   )
 );
+
+let x = Number(
+  prompt(
+    "Vamos precisar de dois números para realizarmos os cálculos, digite o primeiro número."
+  )
+);
+let y = Number(
+  prompt("Agora digite o segundo número e logo em seguida teremos o resultado.")
+);
+
+if (!validarNumero(x) || !validarNumero(y) || x <= 0 || y <= 0) {
+  alert(
+    "O primeiro e segundo dígito devem ser números válidos e maiores que zero."
+  );
+} else {
+  escolha(pergunta, x, y);
+}
+
+// Aqui estamos apenas atualizando a variável recomecar, sem a necessidade de redefinir
+recomecar = prompt("Gostaria de realizar um novo cálculo, Sim ou Não?");
 
 function escolha(pergunta, x, y) {
   if (pergunta == 1) {
@@ -39,7 +62,13 @@ function validarNumero(valor) {
 }
 
 function recomecarCalculo() {
-  while (pergunta === 1 || pergunta === 2 || pergunta === 3 || pergunta === 4) {
+  while (recomecar.toLowerCase() === "sim") {
+    let pergunta = Number(
+      prompt(
+        "Escolha um número de 1 a 4 para realizarmos operações, sendo 1 - Adição, 2 - Subtração, 3 - Multiplicação e 4 - Divisão"
+      )
+    );
+
     let x = Number(
       prompt(
         "Vamos precisar de dois números para realizarmos os cálculos, digite o primeiro número."
